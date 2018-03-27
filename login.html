@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <h1>Hello, shopping!</h1>
+  <script>
+    function getQueryString(name) {
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+      var r = window.location.search.substr(1).match(reg);
+      if (r != null) return unescape(r[2]); return null;
+    }
+
+    let corpId = getQueryString('corpId');
+    let appCode = getQueryString('appCode');
+    let url = window.location.href;
+    url = encodeURIComponent(url);
+
+    console.log('corpId:', corpId)
+    console.log('appCode:', appCode)
+    console.log('url:', url)
+
+    let locationUrl = `https://swww.hoswork.com/api/website/buildapp/test?corpId=${corpId}&appCode=${appCode}&url=${url}`;
+    console.log('locationUrl:', locationUrl);
+    window.location.href = locationUrl;
+  </script>
+</body>
+
+</html>
