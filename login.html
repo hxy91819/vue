@@ -14,15 +14,15 @@
     }
 
     let corpId = getQueryString('corpId');
-    let appCode = getQueryString('appCode');
+    let agentId = getQueryString('agentId');
     let url = window.location.href;
     url = encodeURIComponent(url);
 
     console.log('corpId:', corpId)
-    console.log('appCode:', appCode)
+    console.log('agentId:', agentId)
     console.log('url:', url)
 
-    let locationUrl = `https://swww.hoswork.com/api/website/buildapp/test?corpId=${corpId}&appCode=${appCode}&url=${url}`;
+    let locationUrl = `https://swww.hoswork.com/api/website/buildapp/test?corpId=${corpId}&agentId=${agentId}&url=${url}`;
     console.log('locationUrl:', locationUrl);
     window.location.href = locationUrl;
   </script>
